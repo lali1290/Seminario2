@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://PantallaAtaques.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ataques/phishing.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 1 )]
+[connection signal="botonN" from="Node2D2" to="." method="_on_Node2D2_botonN"]
+[connection signal="botonS" from="Node2D2" to="." method="_on_Node2D2_botonS"]
