@@ -6,19 +6,17 @@ func _ready():
 	$"Node2D2/TileMap/B-No".text=textoNo[contador]
 	$"Node2D2/TileMap/B-Si".text=textoSo[contador]
 	preguntas(0,lista)
-	pass # Replace with function body.
 
 var contador=0
 var puntaje=0
 var resp=true
-var lista=["Antes de llegar te llega un mensaje SMS del BCP, dice: 'Buenas Tardes, para brindar mayor seguridad tienes que confirmar estos datos, por favor contestar el mensaje con su número de cuenta y contraseña para la confirmación'. ¿Deberías mandar el mensaje con tus datos?",
- "Te llega el correo de un desconocido, ¿Abres el correo?",
-"Te llega un correo con visibles erroes ortograficos, ¿Abres el correo?",
-"Después de trabajar decides ir a tomarte una ducha, al salir ves que tu mamá te ha enviado un mensaje que dice “Donaciones para los niños pobres, por favor haga sus donaciones ingresando sus datos bancarios en este SOSPECHOSO link, 'https://www.viabcp.com/donacionesanonimasparaelcuidadodeniñospobresenlasierradelpais'. ¿Abres el link?"]
+var lista=["¿Tienes la costumbre de escribir contraseñas en una nota?",
+"¿Pondrías tu contraseña de tu computadora en un post-it?",
+"¿Tiras documentos importantes a la basura sin triturar o quemar?",
+"¿Destruyes papeles que tienen información importante?"]
 var respuesta=[false,false,false,false]
 var textoNo= ["No abro","No","No","No lo abro"]
 var textoSo= ["Si abro","Sí","Sí","Sí lo abro"]
-
 
 func preguntas(con,list):
 #	var yafue = lista.size()

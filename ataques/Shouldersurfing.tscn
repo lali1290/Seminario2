@@ -7,4 +7,5 @@
 script = ExtResource( 2 )
 
 [node name="Node2D" parent="." instance=ExtResource( 1 )]
-script = null
+[connection signal="botonN" from="Node2D" to="." method="_on_Node2D_botonN"]
+[connection signal="botonS" from="Node2D" to="." method="_on_Node2D_botonS"]
