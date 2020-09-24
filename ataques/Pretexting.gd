@@ -2,6 +2,12 @@ extends Node2D
 
 
 func _ready():
+	$Node2D2/TileMap/Baiting.hide()
+	$Node2D2/TileMap/Pretexting.hide()
+	$Node2D2/TileMap/Phishing.hide()
+	$Node2D2/TileMap/ShoulderSurfing.hide()
+	$Node2D2/TileMap/Vishing.hide()
+	$"Node2D2/TileMap/DumpsterDiving ".hide()
 	$"Node2D2/TileMap/B-No".show()
 	$"Node2D2/TileMap/B-Si".show()
 	$"Node2D2/TileMap/B-No".text=textoNo[contador]
@@ -19,31 +25,59 @@ var respuesta=[false,false,false]
 var textoNo= ["No entrego","No doy","No"]
 var textoSo= ["Si entrego","Sí doy","Sí"]
 
+var respNo=[]
+var respSi=[]
+
+var concepto="El pretexting o pretexto es el acto de crear un falso escenario apelando a la confianza humana para que no solo revele información, sino también para que logre hacer alguna acción."
+
 func preguntas(con,list):
-#	var yafue = lista.size()
-	if (con<=2):
+	if (con<3):
 		$Node2D2/TileMap/Label.text= list[con]
 		$Node2D2/TileMap/Label.show()
 		$"Node2D2/TileMap/B-No".text=textoNo[con]
 		$"Node2D2/TileMap/B-Si".text=textoSo[con]
-	else:
-		return get_tree().change_scene("res://PantallaAtaques.tscn")
 
 func correctas(coso):
 	if (coso == respuesta[contador]):
 		puntaje = puntaje + 1
-		$Node2D2.puntaje_total=$Node2D2.puntaje_total+1
+		#$Node2D2.puntaje_total= $Node2D2.puntaje_total+1
 
 func _on_Node2D2_botonN():
 	correctas(false)
+	$"Node2D2/TileMap/B-No".hide()
+	$"Node2D2/TileMap/B-Si".hide()
+	$Node2D2/TileMap/Advertencia.text= respNo[contador]
 	contador= contador + 1
 	preguntas(contador,lista)
-	print(contador)
-	print(puntaje)
+	print(contador)#"Contados: " + 
+	print(puntaje)#"Punteje: " + 
+	$Node2D2/TileMap/Label.hide()
+	$Node2D2/TileMap/Continuar.show()
+	$Node2D2/TileMap/Advertencia.show()
 
 func _on_Node2D2_botonS():
 	correctas(true)
+	$"Node2D2/TileMap/B-No".hide()
+	$"Node2D2/TileMap/B-Si".hide()
+	$Node2D2/TileMap/Advertencia.text= respSi[contador]
 	contador= contador + 1
 	preguntas(contador,lista)
-	print(contador)
-	print(puntaje)
+	print(contador)#"Contados: " + 
+	print(puntaje)#"Punteje: " + 
+	$Node2D2/TileMap/Label.hide()
+	$Node2D2/TileMap/Continuar.show()
+	$Node2D2/TileMap/Advertencia.show()
+
+
+func _on_Node2D2_Continuar():
+	if (contador<3):
+		$Node2D2/TileMap/Advertencia.hide()
+		$Node2D2/TileMap/Label.show()
+		$"Node2D2/TileMap/B-No".show()
+		$"Node2D2/TileMap/B-Si".show()
+		$Node2D2/TileMap/Continuar.hide()
+	elif(contador==4):
+		$Node2D2/TileMap/Advertencia.text=concepto
+		contador = contador+1
+	else:
+		return get_tree().change_scene("res://PantallaAtaques.tscn")
