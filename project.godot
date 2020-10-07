@@ -19,6 +19,11 @@ config/name="Juego de prueba nuevo"
 run/main_scene="res://PantallaPrincipal.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PantallaAtaques="res://PantallaAtaques.tscn"
+PantallaPrincipal="*res://PantallaPrincipal.tscn"
+
 [display]
 
 window/size/width=600

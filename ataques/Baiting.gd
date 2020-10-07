@@ -16,18 +16,28 @@ func _ready():
 var contador=0
 var puntaje=0
 var resp=true
-var lista=["¿Crees que es peligroso encontrarse un USB tirado en la calle?","Encontraste un USB tirado en la calle, ¿Lo recoges?"]
-var respuesta=[false,false]
-var textoNo= ["No","No lo tomo"]
-var textoSo= ["Sí","Si lo tomo"]
+var lista=["Estas caminando por la Universidad y te encuentras un USB. ¿Crees que es peligroso encontrarse un USB tirado en la calle?",
+"¿Sabías que podrías encontrar un virus en un USB o CD?",
+"Tu amigo llega y te dice que encontro un pendrive en un escritorio de la universidad, ¿Esta bien que lo conecte directo a su pc?",
+""]
+
+var respuesta=[false,false,true]
+var textoNo= ["No","No sabía","Si"]
+var textoSo= ["Sí","Si sabía","No"]
+
+var respNo=["Felicidades!! Evitaste el ataque Baiting, si encuentras un USB tirado en la universidad o en cualquier otro lado, es preferible entregarlo a objetos perdidos a arriesgarte",
+"MUY BIEN! Muchos hackers se aprovechan de este objeto físico que parece inofensivo para implantar malwares, debes de tener cuidado con los pendrives que ingresan a tu computadora",
+"OH NO!! Infectaron tu computadora, si encuentras un USB tirado en la universidad o en cualquier otro lado, es preferible entregarlo a objetos perdidos a arriesgarte",
+""]
+var respSi=["OH NOOO!! Sufriste el ataque Baiting, si encuentras un USB tirado en la universidad o en cualquier otro lado, es preferible entregarlo a objetos perdidos a arriesgarte",
+"INFECTARON TU CAMPUTADORA!!! Muchos hackers se aprovechan de este objeto físico que parece inofensivo para implantar malwares, debes de tener cuidado con los pendrives que ingresan a tu computadora",
+"EXCELENTE!! No infectaron la computadora de tu amigo, si encuentras un USB tirado en la universidad o en cualquier otro lado, es preferible entregarlo a objetos perdidos a arriesgarte",
+""]
+
 var concepto= "El ataque Baiting se aprovecha de la codicia y curiosidad de los usuarios utilizando medios físicos o softwares y artículos en línea para infectarlos con un malware y así dañar a sus víctimas. "
 
-var respNo=[]
-var respSi=[]
-var conceptop="El ataque Baiting podría compararse con el Caballo de Troya, este se aprovecha de la codicia y curiosidad de los usuarios utilizando medios físicos o softwares y artículos en línea para infectarlos con un malware y así dañar a sus víctimas."
-
 func preguntas(con,list):
-	if (con<4):
+	if (con<3):
 		$Node2D2/TileMap/Label.text= list[con]
 		$Node2D2/TileMap/Label.show()
 		$"Node2D2/TileMap/B-No".text=textoNo[con]
@@ -36,7 +46,6 @@ func preguntas(con,list):
 func correctas(coso):
 	if (coso == respuesta[contador]):
 		puntaje = puntaje + 1
-		#$Node2D2.puntaje_total= $Node2D2.puntaje_total+1
 
 func _on_Node2D2_botonN():
 	correctas(false)
@@ -45,8 +54,8 @@ func _on_Node2D2_botonN():
 	$Node2D2/TileMap/Advertencia.text= respNo[contador]
 	contador= contador + 1
 	preguntas(contador,lista)
-	print(contador)#"Contados: " + 
-	print(puntaje)#"Punteje: " + 
+	print("Tu puntaje es: "+str(puntaje))
+	$Node2D2/TileMap/Score.text = str($"/root/PantallaAtaques".puntaje_total)
 	$Node2D2/TileMap/Label.hide()
 	$Node2D2/TileMap/Continuar.show()
 	$Node2D2/TileMap/Advertencia.show()
@@ -58,22 +67,24 @@ func _on_Node2D2_botonS():
 	$Node2D2/TileMap/Advertencia.text= respSi[contador]
 	contador= contador + 1
 	preguntas(contador,lista)
-	print(contador)#"Contados: " + 
-	print(puntaje)#"Punteje: " + 
+	print("Tu puntaje es: "+str(puntaje))
 	$Node2D2/TileMap/Label.hide()
 	$Node2D2/TileMap/Continuar.show()
 	$Node2D2/TileMap/Advertencia.show()
 
 
 func _on_Node2D2_Continuar():
-	if (contador<4):
+	if (contador<3):
 		$Node2D2/TileMap/Advertencia.hide()
 		$Node2D2/TileMap/Label.show()
 		$"Node2D2/TileMap/B-No".show()
 		$"Node2D2/TileMap/B-Si".show()
 		$Node2D2/TileMap/Continuar.hide()
-	elif(contador==4):
+	elif(contador==2):
 		$Node2D2/TileMap/Advertencia.text=concepto
 		contador = contador+1
 	else:
+		$"/root/PantallaAtaques".puntaje_total = $"/root/PantallaAtaques".puntaje_total + puntaje
+		print("tu puntaje acumulado es:" + str($"/root/PantallaAtaques".puntaje_total))
+		print("Ya hiciste Baiting")
 		return get_tree().change_scene("res://PantallaAtaques.tscn")

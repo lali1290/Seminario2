@@ -9,9 +9,10 @@ func _ready():
 	$"Node2D/TileMap/DumpsterDiving ".hide()
 	pass # Replace with function body.
 var contador = 0
+var puntaje_total=0
 func _on_Button_pressed():
 	if contador== 0:
-		$Node2D/TextureRect/Label.text = "Este juego quiere enseñarte sobre los atauqes de ingenieria social"
+		$Node2D/TextureRect/Label.text = "Este juego quiere enseñarte sobre los ataques de ingenieria social, ataques que podrias sufrir en un dia común"
 		contador=1
 	elif contador== 1: 
 		$Node2D/TextureRect/Label.text = "La ingenieria social es el uso de estrategias y técnicas para obtener información de las personas persuadiendo a los mismos para que divulguen información privada."

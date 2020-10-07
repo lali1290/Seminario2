@@ -6,6 +6,7 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Node2D" parent="." instance=ExtResource( 1 )]
-[connection signal="botonN" from="Node2D" to="." method="_on_Node2D_botonN"]
-[connection signal="botonS" from="Node2D" to="." method="_on_Node2D_botonS"]
+[node name="Node2D2" parent="." instance=ExtResource( 1 )]
+[connection signal="Continuar" from="Node2D2" to="." method="_on_Node2D2_Continuar"]
+[connection signal="botonN" from="Node2D2" to="." method="_on_Node2D2_botonN"]
+[connection signal="botonS" from="Node2D2" to="." method="_on_Node2D2_botonS"]
