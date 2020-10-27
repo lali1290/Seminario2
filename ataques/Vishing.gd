@@ -16,30 +16,27 @@ func _ready():
 var contador=0
 var puntaje=0
 var resp=true
-var lista=["Estas caminando y recibes un SMS de que se ha efectuado una compra con tu tarjeta de crédito y te piden que confirmes la compra llamando el siguiente número “9999xxxx”. Llamas y te piden tu número de DNI Y de tarjeta, ¿Es correcto que un banco te pida información por un mensaje de texto?",
-"Hoas más tarde, estas en el bus camino a tu destino y recibes una llamada del banco pidiéndote digitar tu número de DNI para poder acceder a beneficios extra de tu cuenta. ¿Digitas tu número de DNI?",
-"Ya en el lgar con tus amigos, recibes un SMS pidiéndote ingresar al siguiente link porque hay actividad sospechosa en tu cuenta. ¿Qué haces?",
-"Cuando terminana su reunión, recibes una llamada que dice:'FELICIDADES, ganaste un concurso para un auto 0 kilómetros, tan solo manda tu DNI y dirección para dejar tu nuevo auto en la puerta de tu casa'. ¿Das tus datos personales? ",
-"Llegas a tu casa ay tu mamá tecibe una llamada que dice: 'Fecicidades se;ora se acaba de ganar un iPhone7, para recibir su nuevo telefono con linea, debe reargar el siguiente número con tan solo 20 soles: 934xxxxxx'. tu mamá te pide que recarges el número. ¿Que haces? ",
-""]
 
+var lista=["Pablito está caminando a reunirse con sus amigos y recibe un SMS que dice se ha efectuado una compra con su tarjeta de crédito y le piden que confirme la compra llamando el siguiente número “9999xxxx”. Le llama y le piden su número de DNI y de tarjeta /n ¿Es correcto que un banco le pida información por un mensaje de texto?",
+"Horas más tarde, Pablito está en el bus camino a su destino y recibe una llamada del banco pidiéndole digitar su número de DNI para poder acceder a beneficios extra de su cuenta. /n ¿Debería digitar su número de DNI?",
+"Ya en el lugar con tus amigos, recibe un SMS pidiéndole ingresar al siguiente link porque hay actividad sospechosa en su cuenta. /n¿Qué debería hacer Pablito?",
+"Cuando termina su reunión, recibe una llamada que dice: /n 'FELICIDADES, ganaste un concurso para un auto 0 kilómetros, tan solo manda tu DNI y dirección para dejar tu nuevo auto en la puerta de tu casa'. /n ¿Debería Pablito dar sus datos personales? ",
+"Al llegar a su casa, su mamá recibe una llamada que dice: /n 'Felicidades señora se acaba de ganar un iPhone7, para recibir su nuevo teléfono con linea nueva, debe recargar el siguiente número con tan solo 20 soles: 934xxxxxx'. Su mamá le pide que recargue el número. ¿Qué debería hacer Pablito? "]
 var respuesta=[false,false,true,true,true]
+var textoNo= ["No lo es","No debe","Hace clic","Si debe","Recargar"]
+var textoSo= ["Si lo es","Sí debe","No hace caso","No debe", "No recargar"]
 
-var textoNo= ["No lo es","No doy","Hago clic","Si doy","Recargo"]
-var textoSo= ["Si lo es","Sí doy","No hago caso","No doy", "No recargo"]
-
-var respNo=["Felicidades!! Recuerda que el banco nunca te va a pedir que envíes información por mensaje de texto",
-"Felicidades!! Recuerda que el banco nunca te va a pedir que envíes información por mensaje de texto",
-"Oh no!!! ¡¡Te robaron la cuenta!! El banco nunca te va a pedir que ingreses directo de un link enviado por mensaje de texto, siempre entra por tu propia cuenta a la página oficial de los bancos",
-"CUIDADO!! Podrias ser victíctima de vishing, hay personas que llaman fradulentamente para sacar infromación o dinero",
-"CUIDADO!! Podrias ser victíctima de vishing, hay personas que llaman fradulentamente para sacar infromación o dinero",
+var respNo=["Felicidades!! Pablito evito el VISHING!! /n Recuerda que el banco nunca te va a pedir que envíes información por mensaje de texto",
+"Felicidades!! Pablito evito el VISHING!! /n Recuerda que el banco nunca te va a pedir que envíes información por mensaje de texto",
+"Oh no!!! ¡¡Te robaron la cuenta!! /n El banco nunca te va a pedir que ingreses directo de un link enviado por mensaje de texto, siempre entra por tu propia cuenta a la página oficial de los bancos",
+"CUIDADO!! Pablito podría ser víctima de vishing!!! /n Hay personas que llaman fraudulentamente para sacar información o dinero",
+"CUIDADO!! Pablito podría ser víctima de vishing!!! /n Hay personas que llaman fraudulentamente para sacar información o dinero ",
 ""]
 var respSi=["Oh no!! Recuerda que el banco nunca te va a pedir que envíes información por mensaje de texto",
 "Oh no!! Recuerda que el banco nunca te va a pedir que envíes información por mensaje de texto",
-"Felicidades!! El banco nunca te va a pedir que ingreses directo de un link enviado por mensaje de texto, siempre entra por tu propia cuenta a la página oficial de los bancos",
-"Felicidades!! Evitaste ser victíctima de vishing, hay personas que llaman fradulentamente para sacar infromación o dinero, si no recuerdas haber participado en algún concurso, no deberias de aceptar ese tipo de llamadas",
-"Muy Bien!! Evitaste ser victíctima de vishing, hay personas que llaman fradulentamente para sacar infromación o dinero, si no recuerdas haber participado en algún concurso, no deberias de aceptar ese tipo de llamadas",
-""]
+"Felicidades!! Pablito evito el VISHING!! /n El banco nunca te va a pedir que ingreses directo de un link enviado por mensaje de texto, siempre entra por tu propia cuenta a la página oficial de los bancos",
+"Felicidades!! Pablito evito el VISHING!! /n Evitaste ser víctima de vishing, hay personas que llaman fraudulentamente para sacar información o dinero, si no recuerdas haber participado en algún concurso, no debes de aceptar ese tipo de llamadas ",
+"Muy Bien!!!Pablito evito el VISHING!! /n Evitaste ser víctima de vishing, hay personas que llaman fraudulentamente para sacar información o dinero, si no recuerdas haber participado en algún concurso, no debes de aceptar ese tipo de llamadas"]
 
 var concepto="El vishing es un ataque muy parecido al phishing, con la diferencia que el vishing utiliza exclusivamente el medio TELEFÓNICO."
 

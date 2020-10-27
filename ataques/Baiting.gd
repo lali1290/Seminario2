@@ -16,22 +16,22 @@ func _ready():
 var contador=0
 var puntaje=0
 var resp=true
-var lista=["Estas caminando por la Universidad y te encuentras un USB. ¿Crees que es peligroso encontrarse un USB tirado en la calle?",
-"¿Sabías que podrías encontrar un virus en un USB o CD?",
-"Tu amigo llega y te dice que encontro un pendrive en un escritorio de la universidad, ¿Esta bien que lo conecte directo a su pc?",
+var lista=["Pablito esta caminando por la Universidad y te encuentra un USB. /n ¿Crees que es peligroso encontrarse un USB tirado en la calle?",
+"Pablito te dice: /n ¿Sabías que podrías encontrar un virus en un USB o CD?",
+"Su amigo llega y le dice que encontro un pendrive en un escritorio de la universidad /n ¿Esta bien que lo conecte directo a su pc?",
 ""]
 
 var respuesta=[false,false,true]
 var textoNo= ["No","No sabía","Si"]
 var textoSo= ["Sí","Si sabía","No"]
 
-var respNo=["Felicidades!! Evitaste el ataque Baiting, si encuentras un USB tirado en la universidad o en cualquier otro lado, es preferible entregarlo a objetos perdidos a arriesgarte",
-"MUY BIEN! Muchos hackers se aprovechan de este objeto físico que parece inofensivo para implantar malwares, debes de tener cuidado con los pendrives que ingresan a tu computadora",
-"OH NO!! Infectaron tu computadora, si encuentras un USB tirado en la universidad o en cualquier otro lado, es preferible entregarlo a objetos perdidos a arriesgarte",
+var respNo=["Felicidades!! Evitaste que Pablito sufriera el ataque Baiting. \n Si encuentras un USB tirado en la universidad o en cualquier otro lado, es preferible entregarlo a objetos perdidos a arriesgarte",
+"MUY BIEN! /n Muchos hackers se aprovechan de este objeto físico que parece inofensivo para implantar malwares, debes de tener cuidado con los pendrives que ingresan a tu computadora",
+"OH NO!! Infectaron su computadora /n Si encuentras un USB tirado en la universidad o en cualquier otro lado, es preferible entregarlo a objetos perdidos a arriesgarte",
 ""]
-var respSi=["OH NOOO!! Sufriste el ataque Baiting, si encuentras un USB tirado en la universidad o en cualquier otro lado, es preferible entregarlo a objetos perdidos a arriesgarte",
-"INFECTARON TU CAMPUTADORA!!! Muchos hackers se aprovechan de este objeto físico que parece inofensivo para implantar malwares, debes de tener cuidado con los pendrives que ingresan a tu computadora",
-"EXCELENTE!! No infectaron la computadora de tu amigo, si encuentras un USB tirado en la universidad o en cualquier otro lado, es preferible entregarlo a objetos perdidos a arriesgarte",
+var respSi=["OH NOOO!! Pablito sufrió el ataque Baiting /n Si encuentras un USB tirado en la universidad o en cualquier otro lado, es preferible entregarlo a objetos perdidos a arriesgarte",
+"INFECTARON SU CAMPUTADORA!!! /n  Muchos hackers se aprovechan de este objeto físico que parece inofensivo para implantar malwares, debes de tener cuidado con los pendrives que ingresan a tu computadora",
+"EXCELENTE!! No infectaron la computadora de su amigo /n Si encuentras un USB tirado en la universidad o en cualquier otro lado, es preferible entregarlo a objetos perdidos a arriesgarte",
 ""]
 
 var concepto= "El ataque Baiting se aprovecha de la codicia y curiosidad de los usuarios utilizando medios físicos o softwares y artículos en línea para infectarlos con un malware y así dañar a sus víctimas. "
@@ -80,7 +80,7 @@ func _on_Node2D2_Continuar():
 		$"Node2D2/TileMap/B-No".show()
 		$"Node2D2/TileMap/B-Si".show()
 		$Node2D2/TileMap/Continuar.hide()
-	elif(contador==2):
+	elif(contador==3):
 		$Node2D2/TileMap/Advertencia.text=concepto
 		contador = contador+1
 	else:

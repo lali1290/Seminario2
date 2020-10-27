@@ -16,30 +16,31 @@ var contador=0
 var puntaje=0
 var resp=true
 
-var lista=["Yendo al trabajo te llega un mensaje SMS del BCP, dice: 'Buenas Tardes, para brindar mayor seguridad tienes que confirmar estos datos, por favor contestar el mensaje con su número de cuenta y contraseña para la confirmación'. ¿Deberías mandar el mensaje con tus datos?",
-"Te llega el correo de un desconocido, ¿Abres el correo?",
-"Te llega un correo con visibles errores ortográficos, ¿Abres el correo?",
-"Después de trabajar decides ir a tomarte una ducha, al salir ves que tu mamá te ha enviado un mensaje que dice “Donaciones para los niños pobres, por favor haga sus donaciones ingresando sus datos bancarios en este SOSPECHOSO link, 'https://www.viabcp.com/donacionesanonimasparaelcuidadodeniñospobresenlasierradelpais'. ¿Abres el link?",
-"Eres un empleado de una organización, recibes una llamada del “Área de Mantenimiento” preguntándote por tu usuario y contraseña de tu máquina para una revisión protocolar, tu no sabias de la revisión protocolar. ¿Le das tus datos?",
-"Recibes un mensaje de tu primo(a) que dice “Comparte este link con 3 amigos para tener Spotify gratis por 3 meses” ¿Compartes el link?"]
+var lista=["Pablito esta yendo al trabajo le llega un mensaje SMS del BCP, dice: 'Buenas Tardes, para brindar mayor seguridad tienes que confirmar estos datos, por favor contestar el mensaje con su número de cuenta y contraseña para la confirmación'. /n ¿Él debería mandar el mensaje con sus datos?",
+"A Pablito le llega el correo de un desconocido, /n ¿Abre o no el correo?",
+"Más tarde, le llega un correo con visibles errores ortográficos, /n¿Qué crees que hace Pablo, abre o no el correo?",
+"Después de trabajar, Pablito decide ir a tomarte una ducha, al salir ve que su mamá le ha enviado un mensaje que dice “Donaciones para los niños pobres, por favor haga sus donaciones ingresando sus datos bancarios en este link, 'https://www.viabcp.com/donacionesanonimasparaelcuidadodeniñospobresenlasierradelpais'. /n¿Pablito abre o no el SOSPECHOSO link?",
+"Pablito es un empleado de una organización, un día, recibe una llamada del “Área de Mantenimiento” preguntándote por el usuario y contraseña de su máquina para una revisión protocolar, el no sabía de la revisión protocolar. /n¿Debería darle sus datos?",
+"Pablito recibe un mensaje de su primo(a) que dice ‘Comparte este link con 3 amigos para tener Spotify gratis por 3 meses’ /n¿Crees que Pablito comparte el link?"]
 
-var respuesta=[false,false,false,false, true, true]
-var textoNo= ["No abro","No","No","No lo abro","Si doy", "Si"]
-var textoSo= ["Si abro","Sí","Sí","Sí lo abro","No doy","No"]
+var respuesta=[true,false,false,false, true, true]
+var textoNo= ["No abre","No","No","No lo abre","Si da", "Si"]
+var textoSo= ["Si abre","Sí","Sí","Sí lo abre","No da","No"]
 
-var respNo=["Oh no!! Fuiste víctima de phishing!!! \n Recuerda que un banco nunca te va a pedir datos por SMS",
-"Felicidades, Es preferible no abrir correos de remitentes desconocidos",
-"Felicidades, un correo verídico no debería de tener errores ortográficos",
-"FELICIDADES!! Evitaste el phishing, recuerda que un link no debe tener un nombre tan largo en el dominio",
-"OH NO!! Te robaron!! Recuerda que siempre te van a informar sobre las fechas de mantenimiento o revisión en el área, si alguien te llama y no esta la revisión, es porque estas siendo engañado.",
-"CUIDADOOOO!! Puedes ser víctima de PHISHING los mensajes enviados por cadena son usualmente spam"]
+var respNo=["Oh no!! Pablito fue víctima de phishing!!! \n Recuerda que un banco nunca te va a pedir datos por SMS",
+"Felicidades!!! /n Es preferible no abrir correos de remitentes desconocidos",
+"Felicidades!!! /n un correo verídico no debería de tener errores ortográficos",
+"FELICIDADES!! /n Pablito evitó el phishing, recuerda que un link no debe tener un nombre tan largo en el dominio",
+"OH NO!! Le robaron a Pablito!! /n Recuerda que siempre te van a informar sobre las fechas de mantenimiento o revisión en el área, si alguien te llama y no está la revisión, es porque estas siendo engañado.",
+"CUIDADOOOO!! Pablito puede ser víctima de PHISHING!! /n Los mensajes enviados por cadena son usualmente spam"]
 
-var respSi=["Bien!! Un banco nunca te va a pedir datos por SMS","Ten cuidado, si bien no es malo, hay una alta probabilidad de que te engañen",
-"CUIDADO! un correo verídico no debería tener errores ortográficos",
-"Ten cuidado, Asegúrate de la veracidad de la página antes de hacer alguna transacción",
-"OH NO!! Evitaste el phishing, recuerda que un link no debe tener un nombre tan largo en el dominio",
-"FELICIDADES!! Recuerda que siempre te van a informar sobre las fechas de mantenimiento o revisión en el área, si alguien te llama y no esta la revisión, es porque estas siendo engañado.",
-"Muy Bien!! Evitaste el PHISHING los mensajes enviados por cadena son usualmente spam"]
+var respSi=["Bien!! /n Un banco nunca te va a pedir datos por SMS",
+#"Ten cuidado, si bien no es malo, hay una alta probabilidad de que te engañen",
+"CUIDADO! /n Un correo verídico no debería tener errores ortográficos",
+"Ten CUIDADO!!!! /n Asegúrate de la veracidad de la página antes de hacer alguna transacción",
+"OH NO!! Pablito fue víctima de phishing!!  /n  Recuerda que un link no debe tener un nombre tan largo en el dominio",
+"FELICIDADES!! /n Recuerda que siempre te van a informar sobre las fechas de mantenimiento o revisión en el área, si alguien te llama y no está la revisión, es porque estas siendo engañado.",
+"Muy Bien!! /n Evitaste que Pablo sufriera el PHISHING los mensajes enviados por cadena son usualmente spam"]
 
 var concepto="El phishing es un acto de engaño mediante en el cual se utiliza la suplantación para obtener información de la víctima."
 
