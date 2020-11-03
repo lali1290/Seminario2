@@ -17,30 +17,30 @@ var contador=0
 var puntaje=0
 var resp=true
 
-var lista=["Pablito tiene la costumbre de escribir contraseñas en notas. \n ¿Debería seguir haciéndolo o no?",
-"Pablito es el empleado de una gran empresa, tiene una computadora a la cual solo accede por un usuario y contraseña que te dio la empresa. \n ¿Deberia poner su id y contraseña de su computadora en un post-it?",
-"A Pablito le dieron unos documentos para tirar. Se da cuenta de que esos documentos tienen información confidencial de la empresa. \n ¿Debería tirar documentos a la basura sin triturar o quemar?",
-"Su jefe le dio su número en una nota adhesiva, luego de anotarla en tu teléfono, \n ¿Qué debería hacer con ese papel, lo tira simplemente a la basura o se asegura de que el número sea ininteligible antes de deshacerse del papel?",
-"Pablito fue al médico a recoger los resultados médicos de tu jefe, una vez se los entregas, él le dice que se deshaga de ellos. \n ¿Cómo se deshaces de ellos?",
-"Pablito está trabajando en una empresa y se da cuenta que su credencial, con su número de trabajador impreso en el carné, ya venció. \n ¿Debería tirarlo simplemente o asegurarse de destruirlo?"]
+var lista=["Pablito tiene la costumbre de escribir contraseñas en notas. \n¿Debería seguir haciéndolo o no?",
+"Pablito es el empleado de una gran empresa, tiene una computadora a la cual solo accede por un usuario y contraseña que te dio la empresa. \n¿Deberia poner su id y contraseña de su computadora en un post-it?",
+"A Pablito le dieron unos documentos para tirar. Se da cuenta de que esos documentos tienen información confidencial de la empresa. \n¿Debería tirar documentos a la basura sin triturar o quemar?",
+"Su jefe le dio su número en una nota adhesiva, luego de anotarla en tu teléfono, \n¿Qué debería hacer con ese papel, lo tira simplemente a la basura o se asegura de que el número sea ininteligible antes de deshacerse del papel?",
+"Pablito fue al médico a recoger los resultados médicos de tu jefe, una vez se los entregas, él le dice que se deshaga de ellos. \n¿Cómo se deshaces de ellos?",
+"Pablito está trabajando en una empresa y se da cuenta que su credencial, con su número de trabajador impreso en el carné, ya venció. \n¿Debería tirarlo simplemente o asegurarse de destruirlo?"]
 
 var respuesta=[false,false,true,true,false, true]
 var textoNo= ["No más","No debe","Los tira","Lo tira", "Lo tritura", "Lo tira"]
 var textoSo= ["Sigue","Si debe","Los tritura","Borra el numero", "Lo tira","Lo destruye"]
 
 var respNo=[
-"Muy bien!! \n Poner contraseñas en una nota adhesiva es un grave error, evitaste que le roben a Pablito algún tipo de información.",
-"Felicidades!! \n Uno nunca debe escribir sus contraseñas en notas adhesivas, cualquier persona podría entrar a tu computadora y usarla con malos fines.",
-"Pablito está en problemas!! \n Alguien busco en la basura de la empresa y se robó información importante. Asegúrate siempre de destruir los papeles con información importante, no solo los tires a la basura.",
-"Oh no!! Podrían despedir a Pablito!!! \n Recuerda que los ingenieros sociales buscan en la basura de las empresas, pueden buscar números de personas importantes dentro de la empresa para realizar otros ataques.",
-"MUY BIEN!!!!!! \n Recuerda que un registro medico es información delicada, uno se tiene que deshacer correctamente de algún papel que tenga esa información personal, ya que se podría usar en contra de la persona mencionada en el registro.",
-"¡¡OH NO!! \n Alguien busco en la basura y encontró la credencial de Pablito, ahora alguien está suplantándolo. \n Asegúrate de destruir todo lo que tenga alguna identificación de ti, ya sean papeles o carnés."]
-var respSi=["Oh no!! /n Se robaron la contraseña de su computadora",
-"CUIDADO!! /n Uno nunca debe escribir sus contraseñas en notas adhesivas, cualquier persona podría entrar a tu computadora y usarla con malos fines. A Pablito le pueden robar información de su computadora.",
-"Felicidades!! /n Pablito y tu evitaron el Dumpster Diving. Los papeles importantes deben ser destruidos de alguna forma si se quieren desahacer de ellos, no solo se tiran a la basura, ya que cualquiera podría buscar los papeles en la basura y obtener es información. ",
-"Felicidades!! Hiciste lo correcto!! /n Recuerda que los ingenieros sociales buscan en la basura de las empresas, pueden buscar números de personas importantes dentro de la empresa para realizar OTROS ATAQUES.",
-"OH NO!! /n Recuerda que un registro medico es información delicada, uno se tiene que deshacer correctamente de algún papel que tenga esa información personal, ya que se podría usar en contra de la persona mencionada en el registro",
-"MUY BIEN!!!!! /n Siempre asegúrate de destruir todo lo que tenga alguna identificación sobre ti, ya sean papeles o carnés."]
+"Muy bien!! \nPoner contraseñas en una nota adhesiva es un grave error, evitaste que le roben a Pablito algún tipo de información.",
+"Felicidades!! \nUno nunca debe escribir sus contraseñas en notas adhesivas, cualquier persona podría entrar a tu computadora y usarla con malos fines.",
+"Pablito está en problemas!! \nAlguien busco en la basura de la empresa y se robó información importante. Asegúrate siempre de destruir los papeles con información importante, no solo los tires a la basura.",
+"Oh no!! Podrían despedir a Pablito!!! \nRecuerda que los ingenieros sociales buscan en la basura de las empresas, pueden buscar números de personas importantes dentro de la empresa para realizar otros ataques.",
+"MUY BIEN!!!!!! \nRecuerda que un registro medico es información delicada, uno se tiene que deshacer correctamente de algún papel que tenga esa información personal, ya que se podría usar en contra de la persona mencionada en el registro.",
+"¡¡OH NO!! \nAlguien busco en la basura y encontró la credencial de Pablito, ahora alguien está suplantándolo. \nAsegúrate de destruir todo lo que tenga alguna identificación de ti, ya sean papeles o carnés."]
+var respSi=["Oh no!! \nSe robaron la contraseña de su computadora",
+"CUIDADO!! \nUno nunca debe escribir sus contraseñas en notas adhesivas, cualquier persona podría entrar a tu computadora y usarla con malos fines. A Pablito le pueden robar información de su computadora.",
+"Felicidades!! \nPablito y tu evitaron el Dumpster Diving. Los papeles importantes deben ser destruidos de alguna forma si se quieren desahacer de ellos, no solo se tiran a la basura, ya que cualquiera podría buscar los papeles en la basura y obtener es información. ",
+"Felicidades!! Hiciste lo correcto!! \nRecuerda que los ingenieros sociales buscan en la basura de las empresas, pueden buscar números de personas importantes dentro de la empresa para realizar OTROS ATAQUES.",
+"OH NO!! \nRecuerda que un registro medico es información delicada, uno se tiene que deshacer correctamente de algún papel que tenga esa información personal, ya que se podría usar en contra de la persona mencionada en el registro",
+"MUY BIEN!!!!! \nSiempre asegúrate de destruir todo lo que tenga alguna identificación sobre ti, ya sean papeles o carnés."]
 
 var concepto="El Dumpster Diving es el acto de “escarbar” en la basura o equipos desechados de alguna empresa para así obtener documentos con información sensible de la empresa como, por ejemplo, material informático, CD, DVD, etc."
 
