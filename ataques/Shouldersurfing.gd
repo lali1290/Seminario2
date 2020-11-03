@@ -22,9 +22,9 @@ var lista=["Pablito tiene que hacer muchas cosas hoy, primero va a un cajero aut
 "Una vez visto los archivos, Pablito va al baño. \n¿Debería dejar su laptop desbloqueada sobre la mesa?",
 "El amigo de Pablito quiere entrar a su cuenta bancaria conectado al internet de la cafetería. \n¿Qué debería hacer Pablito, dejarlo seguir o decirle que no continúe?"]
 
-var respuesta=[ true,false, true,false]
-var textoNo= ["No cubre","Pared","No","No siga"]
-var textoSo= ["Sí cubre","Cualquiera","Sí","Siga"]
+var respuesta=[ true,false, false,false]
+var textoNo= ["No cubre","Pared","No debe","No siga"]
+var textoSo= ["Sí cubre","Cualquiera","Sí debe","Siga"]
 
 var respNo=["Uy noo!! Le robaron la contraseña de su tarjeta. \nRecuerda siempre ser precavido(a) cuando ingresas la contraseña en un cajero, no sabes quién o qué puede estar observando",
 "Felicidadeees!! Evitaste el SHOULDER SURFING!! \nRecuerda que alguien podría estar viéndote desde atrás y con información confidencial uno debe ser aún más precavido",

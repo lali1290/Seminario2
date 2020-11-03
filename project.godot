@@ -21,6 +21,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
+PantallaAtaques="res://PantallaAtaques.tscn"
 PantallaPrincipal="*res://PantallaPrincipal.tscn"
 
 [display]

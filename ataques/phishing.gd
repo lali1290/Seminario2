@@ -1,14 +1,11 @@
 extends Node2D
 func _ready():
-	$PantallaPrincipal.phis=true
 	$Node2D2/TileMap/Baiting.hide()
 	$Node2D2/TileMap/Pretexting.hide()
 	$Node2D2/TileMap/Phishing.hide()
 	$Node2D2/TileMap/ShoulderSurfing.hide()
 	$Node2D2/TileMap/Vishing.hide()
 	$"Node2D2/TileMap/DumpsterDiving ".hide()
-	
-	
 	$"Node2D2/TileMap/B-No".show()
 	$"Node2D2/TileMap/B-Si".show()
 	$"Node2D2/TileMap/B-No".text=textoNo[contador]
@@ -38,15 +35,14 @@ var respNo=["Oh no!! Pablito fue víctima de phishing!!! \nRecuerda que un banco
 "CUIDADOOOO!! Pablito puede ser víctima de PHISHING!!\nLos mensajes enviados por cadena son usualmente spam"]
 
 var respSi=["Bien!! \nUn banco nunca te va a pedir datos por SMS",
-#"Ten cuidado, si bien no es malo, hay una alta probabilidad de que te engañen",
+"Ten cuidado!! \nSi bien no es malo, hay una alta probabilidad de que te engañen",
 "CUIDADO!\nUn correo verídico no debería tener errores ortográficos",
 "Ten CUIDADO!!!! \nAsegúrate de la veracidad de la página antes de hacer alguna transacción",
-"OH NO!! Pablito fue víctima de phishing!!  \nRecuerda que un link no debe tener un nombre tan largo en el dominio",
+#"OH NO!! Pablito fue víctima de phishing!!  \nRecuerda que un link no debe tener un nombre tan largo en el dominio",
 "FELICIDADES!! \nRecuerda que siempre te van a informar sobre las fechas de mantenimiento o revisión en el área, si alguien te llama y no está la revisión, es porque estas siendo engañado.",
 "Muy Bien!! \nEvitaste que Pablo sufriera el PHISHING los mensajes enviados por cadena son usualmente spam"]
 
 var concepto="El phishing es un acto de engaño mediante en el cual se utiliza la suplantación para obtener información de la víctima."
-
 
 func preguntas(con,list):
 	if (con<6):
