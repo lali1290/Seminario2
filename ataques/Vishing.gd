@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	$Node2D2.vish = false
 	$"Node2D2/TileMap/DumpsterDiving ".hide()
 	$Node2D2/TileMap/Baiting.hide()
 	$Node2D2/TileMap/Pretexting.hide()
@@ -12,6 +13,8 @@ func _ready():
 	$"Node2D2/TileMap/B-No".text=textoNo[contador]
 	$"Node2D2/TileMap/B-Si".text=textoSo[contador]
 	preguntas(0,lista)
+	
+	
 
 var contador=0
 var puntaje=0
@@ -22,6 +25,7 @@ var lista=["Pablito está caminando a reunirse con sus amigos y recibe un SMS qu
 "Ya en el lugar con tus amigos, recibe un SMS pidiéndole ingresar al siguiente link porque hay actividad sospechosa en su cuenta. \n¿Qué debería hacer Pablito?",
 "Cuando termina su reunión, recibe una llamada que dice: \n'FELICIDADES, ganaste un concurso para un auto 0 kilómetros, tan solo manda tu DNI y dirección para dejar tu nuevo auto en la puerta de tu casa'. \n¿Debería Pablito dar sus datos personales? ",
 "Al llegar a su casa, su mamá recibe una llamada que dice: \n'Felicidades señora se acaba de ganar un iPhone7, para recibir su nuevo teléfono con linea nueva, debe recargar el siguiente número con tan solo 20 soles: 934xxxxxx'. Su mamá le pide que recargue el número. \n¿Qué debería hacer Pablito? "]
+
 var respuesta=[false,false,true,true,true]
 var textoNo= ["No lo es","No debe","Hace clic","Si debe","Recargar"]
 var textoSo= ["Si lo es","Sí debe","No hace caso","No debe", "No recargar"]
@@ -49,8 +53,11 @@ func preguntas(con,list):
 
 func correctas(coso):
 	if (coso == respuesta[contador]):
+		$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(0, 0, 71, 1))
 		puntaje = puntaje + 1
 		#$Node2D2.puntaje_total= $Node2D2.puntaje_total+1
+	else:
+		$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(255, 0, 0, 1))
 
 func _on_Node2D2_botonN():
 	correctas(false)
@@ -85,6 +92,7 @@ func _on_Node2D2_Continuar():
 		$Node2D2/TileMap/Continuar.hide()
 	elif(contador==5):
 		$Node2D2/TileMap/Advertencia.text=concepto
+		$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(0,0,0, 1))
 		contador = contador+1
 	else:
 		$"/root/PantallaAtaques".puntaje_total = $"/root/PantallaAtaques".puntaje_total + puntaje

@@ -37,6 +37,7 @@ var respSi=["OH NOOO!! Pablito sufrió el ataque Baiting \nSi encuentras un USB 
 var concepto= "El ataque Baiting se aprovecha de la codicia y curiosidad de los usuarios utilizando medios físicos o softwares y artículos en línea para infectarlos con un malware y así dañar a sus víctimas. "
 
 func preguntas(con,list):
+	
 	if (con<3):
 		$Node2D2/TileMap/Label.text= list[con]
 		$Node2D2/TileMap/Label.show()
@@ -45,7 +46,11 @@ func preguntas(con,list):
 
 func correctas(coso):
 	if (coso == respuesta[contador]):
+		$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(0, 0, 71, 1))
 		puntaje = puntaje + 1
+		#$Node2D2.puntaje_total= $Node2D2.puntaje_total+1
+	else:
+		$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(255, 0, 0, 1))
 
 func _on_Node2D2_botonN():
 	correctas(false)
@@ -82,6 +87,7 @@ func _on_Node2D2_Continuar():
 		$Node2D2/TileMap/Continuar.hide()
 	elif(contador==3):
 		$Node2D2/TileMap/Advertencia.text=concepto
+		$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(0,0,0, 1))
 		contador = contador+1
 	else:
 		$"/root/PantallaAtaques".puntaje_total = $"/root/PantallaAtaques".puntaje_total + puntaje

@@ -13,7 +13,8 @@ func _ready():
 	$"Node2D2/TileMap/B-Si".text=textoSo[contador]
 	preguntas(0,lista)
 
-var contador=0
+var rng = RandomNumberGenerator.new()
+var contador=rng.randf_range(0,1)
 var puntaje=0
 var resp=true
 
@@ -53,8 +54,11 @@ func preguntas(con,list):
 
 func correctas(coso):
 	if (coso == respuesta[contador]):
+		$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(0, 0, 71, 1))
 		puntaje = puntaje + 1
 		#$Node2D2.puntaje_total= $Node2D2.puntaje_total+1
+	else:
+		$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(255, 0, 0, 1))
 
 func _on_Node2D2_botonN():
 	correctas(false)
@@ -90,6 +94,7 @@ func _on_Node2D2_Continuar():
 		$Node2D2/TileMap/Continuar.hide()
 	elif(contador==5):
 		$Node2D2/TileMap/Advertencia.text=concepto
+		$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(0,0,0, 1))
 		contador = contador+1
 	else:
 		$"/root/PantallaAtaques".puntaje_total = $"/root/PantallaAtaques".puntaje_total + puntaje

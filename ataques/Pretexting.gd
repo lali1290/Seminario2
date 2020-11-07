@@ -14,7 +14,8 @@ func _ready():
 	$"Node2D2/TileMap/B-Si".text=textoSo[contador]
 	preguntas(0,lista)
 
-var contador=0
+var rng = RandomNumberGenerator.new()
+var contador=rng.randf_range(0,1)
 var puntaje=0
 var resp=true
 var lista=[
@@ -25,7 +26,7 @@ var lista=[
 "Esa misma noche, Pablito está trabajando y le llega un correo de un supuesto compañero que dice: 'Hola, estoy teniendo una mañana ocupada, estoy preparando una sorpresa para los jefes de área, ¿Me podrías dar el email de tu jefe?' \n¿Qué debería hacer?",
 "Le llego un correo que dice: 'Hola, por favor renueva tu número de cuenta para Haberes enviando el número de cuenta por este correo'. \n¿Debería responde el correo o prefiere preguntar a su jefe si están actualizando los datos de sus cuentas bancarias?"]
 
-var respuesta=[false,false,false, true,false,true]
+var respuesta=[false,false,false, true,true,true]
 var textoNo= ["No entrega","No debe","No le interesa", "Si entrega","Si le da","Responde"]
 var textoSo= ["Si entrega","Sí ddebe","Da su dirección", "No entrega","No le da","Pregunta"]
 
@@ -54,7 +55,11 @@ func preguntas(con,list):
 
 func correctas(coso):
 	if (coso == respuesta[contador]):
+		$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(0, 0, 71, 1))
 		puntaje = puntaje + 1
+		#$Node2D2.puntaje_total= $Node2D2.puntaje_total+1
+	else:
+		$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(255, 0, 0, 1))
 
 func _on_Node2D2_botonN():
 	correctas(false)
@@ -91,6 +96,7 @@ func _on_Node2D2_Continuar():
 		$Node2D2/TileMap/Continuar.hide()
 	elif(contador==5):
 		$Node2D2/TileMap/Advertencia.text=concepto
+		$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(0,0,0, 1))
 		contador = contador+1
 	else:
 		$"/root/PantallaAtaques".puntaje_total = $"/root/PantallaAtaques".puntaje_total + puntaje

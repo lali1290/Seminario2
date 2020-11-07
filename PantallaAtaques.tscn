@@ -154,7 +154,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 18
+size = 20
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
@@ -235,9 +235,8 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="TileMap"]
-visible = false
 margin_left = 9.0
-margin_top = 84.0
+margin_top = 64.0
 margin_right = 593.0
 margin_bottom = 264.0
 custom_fonts/font = SubResource( 3 )

@@ -28,7 +28,7 @@ var textoSo= ["Sí cubre","Cualquiera","Sí debe","Siga"]
 
 var respNo=["Uy noo!! Le robaron la contraseña de su tarjeta. \nRecuerda siempre ser precavido(a) cuando ingresas la contraseña en un cajero, no sabes quién o qué puede estar observando",
 "Felicidadeees!! Evitaste el SHOULDER SURFING!! \nRecuerda que alguien podría estar viéndote desde atrás y con información confidencial uno debe ser aún más precavido",
-"Oh noo!! Pablito no logró evitar que le roben información!! \nLe robaron la información de su computadora. /n Debes de tener cuidado cuando dejas tu computadora, sobre todo si estas en algún lugar público como el trabajo",
+"Oh noo!! Pablito no logró evitar que le roben información!! \nLe robaron la información de su computadora. Debes de tener cuidado cuando dejas tu computadora, sobre todo si estas en algún lugar público como el trabajo",
 "Felicidadeees!! \nRecuerda que nunca debes de buscar información personal en una wifi pública"]
 
 var respSi=[
@@ -49,9 +49,11 @@ func preguntas(con,list):
 
 func correctas(coso):
 	if (coso == respuesta[contador]):
+		$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(0, 0, 71, 1))
 		puntaje = puntaje + 1
-		
 		#$Node2D2.puntaje_total= $Node2D2.puntaje_total+1
+	else:
+		$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(255, 0, 0, 1))
 
 func _on_Node2D2_botonN():
 	correctas(false)
@@ -89,6 +91,7 @@ func _on_Node2D2_Continuar():
 	elif(contador==4):
 		#$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(34,47,157))
 		$Node2D2/TileMap/Advertencia.text=concepto
+		$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(0,0,0, 1))
 		contador = contador+1
 	else:
 		$"/root/PantallaAtaques".puntaje_total = $"/root/PantallaAtaques".puntaje_total + puntaje
