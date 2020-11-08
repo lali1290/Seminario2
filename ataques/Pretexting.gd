@@ -15,7 +15,7 @@ func _ready():
 	preguntas(0,lista)
 
 var rng = RandomNumberGenerator.new()
-var contador=rng.randf_range(0,1)
+var contador=rng.randf_range(0,2)
 var puntaje=0
 var resp=true
 var lista=[
@@ -81,6 +81,7 @@ func _on_Node2D2_botonS():
 	$Node2D2/TileMap/Advertencia.text= respSi[contador]
 	contador= contador + 1
 	preguntas(contador,lista)
+	print("Tu puntaje es: "+str(contador))
 	print("Tu puntaje es: "+str(puntaje))
 	$Node2D2/TileMap/Label.hide()
 	$Node2D2/TileMap/Continuar.show()
@@ -94,7 +95,7 @@ func _on_Node2D2_Continuar():
 		$"Node2D2/TileMap/B-No".show()
 		$"Node2D2/TileMap/B-Si".show()
 		$Node2D2/TileMap/Continuar.hide()
-	elif(contador==5):
+	elif(contador>=5):
 		$Node2D2/TileMap/Advertencia.text=concepto
 		$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(0,0,0, 1))
 		contador = contador+1
