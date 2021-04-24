@@ -14,10 +14,10 @@ func _ready():
 	$"Node2D2/TileMap/B-Si".text=textoSo[contador]
 	preguntas(0,lista)
 
-var rng = RandomNumberGenerator.new()
-var contador=rng.randf_range(0,2)
+var contador=0
 var puntaje=0
 var resp=true
+
 var lista=[
 "En un día cualquiera, Pablo recibe una llamada desconocida, le dicen que ganó un concurso para un viaje todo pagado. Requieren sus datos para poder entregarle el premio. \n¿Crees que le entrega tus datos?",
 "Más tarde, Pablito recibe una llamada de un banco pidiéndole sus datos personales para que actualicen su información. \n¿Debería dar su información?",
@@ -95,7 +95,7 @@ func _on_Node2D2_Continuar():
 		$"Node2D2/TileMap/B-No".show()
 		$"Node2D2/TileMap/B-Si".show()
 		$Node2D2/TileMap/Continuar.hide()
-	elif(contador>=5):
+	elif(contador==5):
 		$Node2D2/TileMap/Advertencia.text=concepto
 		$Node2D2/TileMap/Advertencia.add_color_override("font_color", Color(0,0,0, 1))
 		contador = contador+1

@@ -38,10 +38,10 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="Node2D/TextureRect"]
-margin_left = 90.3685
-margin_top = 360.158
-margin_right = 177.368
-margin_bottom = 405.158
+margin_left = 191.463
+margin_top = 438.054
+margin_right = 441.463
+margin_bottom = 482.054
 custom_fonts/font = SubResource( 1 )
 text = "Iniciar"
 flat = true
@@ -62,6 +62,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Continuar" type="Button" parent="Node2D/TextureRect"]
+margin_left = 440.0
+margin_top = 435.0
+margin_right = 581.0
+margin_bottom = 479.0
+custom_fonts/font = SubResource( 1 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
 [node name="Score" type="Label" parent="Node2D"]
 visible = false
 margin_left = 544.167
@@ -79,3 +91,4 @@ __meta__ = {
 "_editor_description_": ""
 }
 [connection signal="pressed" from="Node2D/TextureRect/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Node2D/TextureRect/Continuar" to="." method="_on_Continuar_pressed"]

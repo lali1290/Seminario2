@@ -13,8 +13,7 @@ func _ready():
 	$"Node2D2/TileMap/B-Si".text=textoSo[contador]
 	preguntas(0,lista)
 
-var rng = RandomNumberGenerator.new()
-var contador=rng.randf_range(0,1)
+var contador=0
 var puntaje=0
 var resp=true
 

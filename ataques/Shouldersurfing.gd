@@ -28,13 +28,13 @@ var textoSo= ["Sí cubre","Cualquiera","Sí debe","Siga"]
 
 var respNo=["Uy noo!! Le robaron la contraseña de su tarjeta. \nRecuerda siempre ser precavido(a) cuando ingresas la contraseña en un cajero, no sabes quién o qué puede estar observando",
 "Felicidadeees!! Evitaste el SHOULDER SURFING!! \nRecuerda que alguien podría estar viéndote desde atrás y con información confidencial uno debe ser aún más precavido",
-"Oh noo!! Pablito no logró evitar que le roben información!! \nLe robaron la información de su computadora. Debes de tener cuidado cuando dejas tu computadora, sobre todo si estas en algún lugar público como el trabajo",
+"Felicidadeees!! Pablito evito el SHOULDER SURFING \nRecuerda siempre ser precavido(a) cuando ingresas la contraseña en un cajero, no sabes quién o qué puede estar observando",
 "Felicidadeees!! \nRecuerda que nunca debes de buscar información personal en una wifi pública"]
 
 var respSi=[
 "Felicidadeees!! Pablito logró  evitarf que le roben información!! \nRecuerda siempre ser precavido(a) cuando ingresas la contraseña en un cajero, no sabes quién o qué puede estar observando",
 "Uy no!! Pablito fue víctima de SHOULDER SURFING \nRecuerda que alguien podría estar viéndote desde atrás y con información confidencial uno debe ser aún más precavido",
-"Felicidadeees!! Pablito evito el SHOULDER SURFING \nRecuerda siempre ser precavido(a) cuando ingresas la contraseña en un cajero, no sabes quién o qué puede estar observando",
+"Oh noo!! Pablito no logró evitar que le roben información!! \nLe robaron la información de su computadora. Debes de tener cuidado cuando dejas tu computadora, sobre todo si estas en algún lugar público como el trabajo",
 "Felicidadeees!!Pablito evitó que le roben información!! \nSiempre debes de tener cuidado cuando dejas tu computadora, sobre todo si estas en algún lugar público como el trabajo",
 "Oh no! ¡¡Le robaron información a Pablito!! \nRecuerda que nunca debes de buscar información personal en una wifi pública"]
 
